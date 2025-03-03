@@ -1,12 +1,40 @@
-# React + Vite
+# TrackMyFitness
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TrackMyFitness is a web-based fitness tracking application designed to help users monitor their workouts, set fitness goals, and track progress over time. The application is built using React for the frontend, Django for the backend, and PostgreSQL for the database.
 
-Currently, two official plugins are available:
+ # Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication (Sign Up, Login, Logout)
 
-## Expanding the ESLint configuration
+- Create and track workouts
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Log exercises with details like sets, reps, and weight
+
+- View workout history and progress
+
+- Set and monitor fitness goals
+
+- Dark and light mode support
+
+# Tech Stack
+
+- Frontend: React (Vite)
+
+- Backend: Django (Django REST Framework)
+
+- Database: PostgreSQL
+
+- Hosting: Render.com
+
+# Usage
+
+- Register or log in to your account.
+
+- Create a workout and log your exercises.
+
+- Track your progress through historical workout data.
+
+- Set fitness goals and measure your improvements.
+
+# WIP
+- devlopment to come
