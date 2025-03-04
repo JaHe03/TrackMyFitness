@@ -79,7 +79,7 @@ class CustomUser(AbstractUser):
     # no need to validate it since it will be validated in the frontend allowings users only to select days of the week
     schedule = models.JSONField(default=dict, blank=True, null=True)
 
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True) 
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email']

@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fitness',
+    'apps.accounts',
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
@@ -148,7 +148,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication'
     ],
 }
-AUTH_USER_MODEL = 'fitness.CustomUser'
+AUTH_USER_MODEL = 'accounts.CustomUser'
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
@@ -159,8 +159,8 @@ SIMPLE_JWT = {
 
 DJOSER = {
     'SERIALIZERS': {
-        'user_create': 'fitness.serializers.CustomUserCreateSerializer',
-        'current_user': 'fitness.serializers.CustomUserSerializer',
+        'user_create': 'accounts.serializers.CustomUserCreateSerializer',
+        'current_user': 'accounts.serializers.CustomUserSerializer',
     },
     'TOKEN_MODEL': None,  # We are using JWT instead of default token auth
 }
