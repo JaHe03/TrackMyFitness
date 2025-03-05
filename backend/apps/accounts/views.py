@@ -37,7 +37,8 @@ class LoginView(APIView):
             user = authenticate(username=username, password=password)
             if user is not None:
                 # Generate JWT tokens
-                refresh = RefreshToken.for_user(user)
+                refresh = RefreshToken.for_user(user) 
+                print("refresh", refresh) # debug
                 return Response({
                     'user'   : CustomUserSerializer(user).data,
                     'refresh': str(refresh),
@@ -46,3 +47,17 @@ class LoginView(APIView):
             else:
                 return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# Logout view
+class LogoutView(APIView):
+    def post(self, request, *args, **kwargs):
+        refresh_token = request.data.get('refresh')
+        print("log out refresh", refresh_token) # debug
+        if not refresh_token:
+            return Response({'error': 'Refresh token is required. Not login?'}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response({'message': 'User logged out successfully'}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error': 'Invalid refresh token'}, status=status.HTTP_400_BAD_REQUEST)
